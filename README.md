@@ -1,22 +1,25 @@
-# InsureAI — Medical Insurance Cost & Risk Predictor
+# INSURANCE AI — Medical Insurance Cost & Risk Predictor
 
-## Business problem
-An insurance company wants to estimate customer medical insurance charges and classify customers into normal-cost or high-cost groups.
+## Business Problem
+An insurance company wants to estimate customers' medical insurance charges and identify customers who may have higher insurance costs.
 
-## Models
-- Linear Regression predicts `charges`.
-- Logistic Regression predicts `high_cost`.
-- R² evaluates regression.
-- Accuracy evaluates classification.
+## Machine Learning Models
+- **Linear Regression:** Predicts medical insurance charges.
+- **Logistic Regression:** Classifies customers into normal-cost and high-cost groups.
+- **R² Score:** Evaluates the regression model.
+- **Accuracy:** Evaluates the classification model.
 
-The high-cost label is created using the median `charges` in the training dataset: 0 means below the median; 1 means at or above the median. This is a simple project definition, not a medical or insurance-industry standard.
+The high-cost label is based on the median insurance charges in the training data. A value of 0 means below the median, and 1 means at or above the median. This is a simple project definition, not an industry standard.
 
-## Setup
-1. Put `insurance.csv` in this folder.
-2. Open a terminal in this folder.
-3. Install libraries: `pip install -r requirements.txt`
-4. Train models: `python train_models.py`
-5. Start the website: `uvicorn main:app --reload`
-6. Open `http://127.0.0.1:8000`
+## How to Run the Project
+1. Keep `insurance.csv` in the project folder.
+2. Open a terminal in the project folder.
+3. Install the required libraries:
+   `pip install -r requirements.txt`
+4. Train the models:
+   `python train_models.py`
+5. Start the website:
+   `uvicorn main:app --reload`
+6. Open `http://127.0.0.1:8000` in your browser.
 
-The training script creates `regression_model.joblib`, `classification_model.joblib`, and `threshold.txt`. Do not create these files yourself.
+The training script creates the model files and `threshold.txt` automatically.
